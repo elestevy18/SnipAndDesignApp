@@ -13,7 +13,7 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         //Remove from navigation to prevent going back to the onbarding sequence
         
-        
+        self.navigationItem.setHidesBackButton(true, animated: false)
         //Delay to navigate to home tabs
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             
@@ -21,7 +21,6 @@ class LoadingViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let dashBoard = storyboard.instantiateViewController(identifier: "home")
             self.navigationController?.dismiss(animated: false, completion: nil)
-            
             self.show(dashBoard, sender: self)
     
     

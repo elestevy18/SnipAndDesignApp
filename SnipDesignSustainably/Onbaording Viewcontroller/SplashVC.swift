@@ -15,6 +15,16 @@ class SplashVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let vm = ProfileViewModel()
+        vm.getDataFromDataProvider()
+    
+        if (vm.size() > 0) {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let dashBoard = storyboard.instantiateViewController(identifier: "home")
+            self.navigationController?.dismiss(animated: false, completion: nil)
+            self.show(dashBoard, sender: self)
+        }
 
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         imageView.contentMode = .scaleAspectFit

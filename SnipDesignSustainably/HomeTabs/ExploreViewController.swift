@@ -15,12 +15,49 @@ var array = ["First Cell", "Second Cell", "Third Cell", "Fourth Cell", "Fifth Ce
 class ExploreViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     
+    @IBOutlet var story1: UIImageView!
+    @IBOutlet var story2: UIImageView!
+    @IBOutlet var story3: UIImageView!
+    @IBOutlet var story4: UIImageView!
+    @IBOutlet var story5: UIImageView!
     
     @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let url1 = "https://picsum.photos/id/"
+        let url2 = "/300/300"
+        var aRandomInt = Int.random(in: 0...1000)
+        var randNum = String(aRandomInt)
+        var url = url1 + randNum + url2
+        var URL1 = URL(string: url)
+        story1.kf.setImage(with: URL1)
+        
+        story1.layer.cornerRadius = story1.frame.size.height / 2
+        aRandomInt = Int.random(in: 0...1000)
+        randNum = String(aRandomInt)
+        url = url1 + randNum + url2
+        URL1 = URL(string: url)
+        story2.kf.setImage(with: URL1)
+        story2.layer.cornerRadius = story1.frame.size.height / 2
+        aRandomInt = Int.random(in: 0...1000)
+        randNum = String(aRandomInt)
+        url = url1 + randNum + url2
+        URL1 = URL(string: url)
+        story3.kf.setImage(with: URL1)
+        story3.layer.cornerRadius = story1.frame.size.height / 2
+        aRandomInt = Int.random(in: 0...1000)
+        randNum = String(aRandomInt)
+        url = url1 + randNum + url2
+        URL1 = URL(string: url)
+        story4.kf.setImage(with: URL1)
+        story4.layer.cornerRadius = story1.frame.size.height / 2
+        aRandomInt = Int.random(in: 0...1000)
+        randNum = String(aRandomInt)
+        url = url1 + randNum + url2
+        URL1 = URL(string: url)
+        story5.kf.setImage(with: URL1)
+        story5.layer.cornerRadius = story1.frame.size.height / 2
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,10 +79,10 @@ class ExploreViewController: UIViewController, UICollectionViewDataSource, UICol
         //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as UICollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
         let url1 = "https://picsum.photos/id/"
-        let url2 = "/200/300"
-        var aRandomInt = Int.random(in: 0...1000)
+        let url2 = "/300/300"
+        let aRandomInt = Int.random(in: 0...1000)
         let randNum = String(aRandomInt)
-        var url = url1 + randNum + url2
+        let url = url1 + randNum + url2
         let URL1 = URL(string: url)
         cell.image.kf.setImage(with: URL1)
         return cell
